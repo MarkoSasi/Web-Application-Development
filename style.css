@@ -51,6 +51,11 @@
     height: 50px;
 }
 
+.imagePost + p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .imagePost{ /* The post's image */
     width: 100%;
 }
@@ -62,6 +67,10 @@
 #important {
     box-shadow: 7px 7px 7px red;
     color: red;
+}
+
+.like:hover {
+    box-shadow: 2px 2px 2px 2px gray;
 }
 
 form {
