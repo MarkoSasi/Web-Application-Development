@@ -59,6 +59,11 @@
     padding: 5px;
 }
 
+#important {
+    box-shadow: 7px 7px 7px red;
+    color: red;
+}
+
 form {
     display: flex;
     background-color: white;
