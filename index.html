@@ -39,13 +39,43 @@
                     $(document).ready(function () {
                         $("input[name='dropdown']").click(function () {
                             $('ul').toggleClass('active')
+                        });
+
+
+                        var source = '/res/json/posts.json'
+                        //var source = 'https://jsonkeeper.com/b/39QU'
+                        $.getJSON(source, function(data){
+                            for(let post of data){
+                               console.log(post)
+                               $(".contentArea").append(`
+                                <div class="contentBox">  
+                                    <contentHeader>
+                                        <p>${post.date}</p>
+                                    </contentHeader>  
+                                    <div class="contentContent">
+                                    <img class="imagePost" src=${post.image}>
+                                    <p>${post.caption}</p>
+                                    </div> 
+                                    <div class="contentFooter">
+                                         <input class="like" type="image" src="res/images/like.jpg" style="width:76;height:48px;"/>
+                                    </div>
+                                </div>
+                                `);
+                            }
                         })
-                    })
+
+                        
+                    });
+
+                   
+                    
                 </script>
             </div>
         </nav>
     </header>
     <div class="contentArea">
+    
+        <!-- 
         <div class="contentBox">
             <div class="contentHeader">
                 <img src="res/images/user.png">
@@ -64,38 +94,7 @@
                 <input class="like" type="image" src="res/images/like.jpg" style="width:76;height:48px;"/>
             </div>
         </div>
-        <div class="contentBox" id="important">
-            <div class="contentHeader">
-                <img src="res/images/user.png">
-                <p>
-                    Sept 25, 2021 11:12
-                </p>
-            </div>
-            <div class="contentContent">
-                    <img class="imagePost" src="res/images/meme.jpg">
-                <p>
-                    Somehow this is extra important post
-                </p>
-            </div>
-            <div class="contentFooter">
-                <input class="like" type="image" src="res/images/like.jpg" style="width:76;height:48px;"/>
-            </div>
-        </div>
-        <div class="contentBox">
-            <div class="contentHeader">
-                <img src="res/images/user.png">
-                <p>
-                    Sept 25, 2021 09:55
-                </p>
-            </div>
-            <div class="contentContent">
-                <p>
-                    This is real content
-                </p>
-            </div>
-            <div class="contentFooter">
-                <input class="like" type="image" src="res/images/like.jpg" style="width:76;height:48px;"/>
-            </div>
+        -->
         </div>
 </body>
 </html>
