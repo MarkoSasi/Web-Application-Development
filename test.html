@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      body {
+        position: relative;
+      }
+
+      .post {
+        width: 50%;
+        background-color: beige;
+        position: relative;
+        color: crimson;
+        margin: 10px auto;
+        border: 1px solid rebeccapurple;
+        padding: 20px;
+        border-radius: 25px;
+      }
+
+
+
+      .post p {
+        font-style: italic;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <script>
+      $(function () {
+        $.getJSON("https://jsonkeeper.com/b/39QU", function(data) {
+	  $.each(data, function(i, f) {
+	    $("#mydata").apend(`
+	      <div class="post">
+	      <h1>f.date</h1>
+	      <p>f.caption</p>
+	      </div>
+	    `);
+	  });
+	});
+      });
+    </script>
+  </head>
+  <body>
+  <div id="mydata"></div>
+  </body>
+</html>
