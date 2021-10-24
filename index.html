@@ -20,6 +20,31 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <div>
+                <img src="res/images/logo.png" alt="Veebirakendused">
+            </div>
+            <div class="search-container">
+                <input type="text"><button>Search</button>
+            </div>
+            <div class="dropdown">
+                <input name="dropdown" type="image" src="res/images/userprofile.png" />
+                <ul>
+                    <li><a>John Doe</a></li>
+                    <li><a>John.Doe@example.com</a></li>
+                </ul>
+                <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("input[name='dropdown']").click(function () {
+                            $('ul').toggleClass('active')
+                        })
+                    })
+                </script>
+            </div>
+        </nav>
+    </header>
     <div class="contentArea">
         <div class="contentBox">
             <div class="contentHeader">
