@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+
+.postList{
+    padding: 10px;
+}
+.postContainer {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid darkgray;
+}
+
+nav {
+    width: 100%;
+    color: white;
+    background-color:lightskyblue;
+    text-align: center;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:lightskyblue;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color:darkcyan;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
+    color: white;
+    background-color:lightskyblue;
+    text-align: center;
+}
+

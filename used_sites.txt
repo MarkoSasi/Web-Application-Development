@@ -1,8 +1,0 @@
-Online webpage to validate correctness of json file:
-https://jsonlint.com/
-
-Online webpage to store json file:
-https://myjson.dit.upm.es/
-
-URI address of our stored json file:
-http://myjson.dit.upm.es/api/bins/eeip
