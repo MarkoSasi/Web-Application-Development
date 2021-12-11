@@ -11,7 +11,7 @@
 <body>
     <h1>Single post page</h1>
     <%- include('./partials/navbar.ejs') %>
-        <div class="singlepost">
+        <div class="singlepostSelected">
             <h2>
                 <%= posts.title %>
             </h2>
@@ -21,9 +21,13 @@
                 </p>
             </div>
             <div class="foot">
-                <a class="delete" data-del="<%= posts.id %>">Delete</a>
-                <a id="like">Like</a>
-                <input type="text" id="likeCount" disabled="disabled" value=<%=posts.likes%>>
+                <div class=footDelete>
+                    <a class="delete" data-del="<%= posts.id %>">Delete</a>
+                </div>
+                <div id=likeButton class=footLike>
+                    <a id="like">Like</a>
+                    <input type="text" id="likeCount" disabled="disabled" value=<%=posts.likes%>>
+                </div>
             </div>
 
         </div>
@@ -54,6 +58,8 @@
                 value = isNaN(value) ? 0 : value;
                 value++;
                 document.getElementById('likeCount').value = value;
+                document.getElementById('likeButton').setAttribute("style", "background-color: lightblue;");
+
             }
         </script>
         <%- include('./partials/footer.ejs') %>
