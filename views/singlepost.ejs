@@ -22,8 +22,8 @@
             </div>
             <div class="foot">
                 <a class="delete" data-del="<%= posts.id %>">Delete</a>
-                <a class="like" >Like</a>
-                <%= posts.likes %>
+                <a id="like">Like</a>
+                <input type="text" id="likeCount" disabled="disabled" value=<%=posts.likes%>>
             </div>
 
         </div>
@@ -36,17 +36,25 @@
                 }).then(window.location.href = '/posts')
             });
 
-            var post_id= "<%= posts.id%>";
+            var post_id = "<%= posts.id%>";
             console.log(post_id);
-            const likebtn = document.querySelector('a.like');
-            likebtn.addEventListener('click', (e)=>{
+            const likebtn = document.querySelector('a#like');
+            likebtn.addEventListener('click', (e) => {
                 console.log("like button pressed");
-                const endpoint = '/singlepost/'+post_id;
+                incrementValue();
+                const endpoint = '/singlepost/' + post_id;
                 fetch(endpoint, {
                     method: 'PUT'
-                }).then(window.location.href = '/singlepost/'+post_id)
-                
-            })
+                })
+            }, { once: true });
+
+            function incrementValue() {
+                console.log("incrementing like");
+                var value = parseInt(document.getElementById('likeCount').value, 10);
+                value = isNaN(value) ? 0 : value;
+                value++;
+                document.getElementById('likeCount').value = value;
+            }
         </script>
         <%- include('./partials/footer.ejs') %>
 </body>
